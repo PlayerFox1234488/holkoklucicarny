@@ -23,7 +23,7 @@ bot = commands.Bot(
 async def cock_rate(ctx: Context) -> None:
     percentage = random.randint(0,100)
     if ctx.author.id == 463805595527544832:
-        await ctx.send("tvuj penis je tak otřesny že by se měl odříznout...")    
+        await ctx.send("tvůj penis je tak otřesný že by se měl odříznout...")    
     else:
         await ctx.send(("rada penisu posoudila tvuj cock a dává mu finální hodnocení " + str(percentage) + "% solidnosti"))
 
@@ -33,9 +33,10 @@ async def story(ctx: Context) -> None:
 
 @bot.command(name="buttping")
 async def buttping(ctx: Context, num: int) -> None:
-    await ctx.message.add_reaction("✅")
-
-
+    if num in range(0, 101):
+        await ctx.message.add_reaction("✅")
+    else:
+        await ctx.send("nemůžeš to dát přes 100%")
 
 assert TOKEN, "Nebyl nastaven zadny token"
 bot.run(TOKEN)
